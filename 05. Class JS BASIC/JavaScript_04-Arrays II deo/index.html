@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>JavaScript</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/reveal.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/theme/white.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="assets/lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        let link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'assets/text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'assets/css/print/pdf.css' : 'assets/css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+</head>
+
+<body>
+
+    <div class="reveal">
+
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+
+            <section style="text-align: left;" data-transition="slide" data-background="#007ac9" data-background-transition="slide">
+                <h1>Looping structures</h1>
+            </section>
+
+            <section style="text-align: left;">
+                <h2>Introduction</h2>
+                <ul>
+                    <li>Sometimes a script needs to repeat the same series of steps over and over again</li>
+                    <li>In programming language, performing the same task over and over is called a <em>loop</em></li>
+                    <li>Several different types</li>
+                </ul>
+            </section>
+
+            <section style="text-align: left;">
+                <h2>While Loop</h2>
+                <ul>
+                    <li>A <em>while loop</em> repeats a chunk of code as long as a particular condition is true</li>
+                </ul>
+                <p><pre><code class="hljs" data-trim contenteditable>
+while(condition) {
+	//javascript to repeat
+}
+
+					</code></pre></p>
+            </section>
+
+            <section>
+                <div class="sl-block" data-block-type="image" style="width: 100%; height: 100%;" data-block-id="">
+                    <div class="sl-block-content"><img src="assets/img/while.png"></div>
+                </div>
+            </section>
+
+
+            <section style="text-align: left;">
+                <h2>While with arrays</h2>
+                <ul>
+                    <li>A <em>while loop</em> can be used to iterate through array's elements</li>
+                </ul>
+                <p><pre><code class="hljs" data-trim contenteditable>
+let days = ['Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat', 'Sun'];
+let counter = 0; 
+while (counter < days.length) {  
+	document.write(days[counter] + ', ');  
+	counter++; 
+} 
+
+					</code></pre></p>
+            </section>
+
+            <section>
+                <div class="sl-block" data-block-type="image" style="width: 100%; height: 100%;" data-block-id="">
+                    <div class="sl-block-content"><img src="assets/img/while_array.png"></div>
+                </div>
+            </section>
+
+            <section style="text-align: left;">
+                <h2 style="color:#e8643b;">Example</h2>
+                <ul>
+                    <li><b>Action: </b> Write a JavaScript program to read ten array values, determine the largest value, and print it </li>
+                </ul>
+            </section>
+
+            <section style="text-align: left;">
+                <h2 style="color:#e8643b;">Student Exercise</h2>
+                <ul>
+                    <li><b>Decription: </b>The Math object allows you to perform mathematical tasks. </li>
+                    <li><b>Math.pow(x,y);</b> - Returns the value of x to the power of y</li>
+                    <li><b>Action: </b> Write a JavaScript program to write the sum of squares of the numbers from 101 to 150 </li>
+                    <li><strong>Time to accomplish:</strong> 15 minutes.</li>
+                </ul>
+            </section>
+
+            <section style="text-align: left;">
+                <h2>Exercise 1 Solution</h2>
+                <p><pre><code class="js" data-trim contenteditable>
+function sumPow(num1, num2){
+let result = 0;
+let i = num1;
+while(i <= num2){
+result += Math.pow(i, 2);
+i++;
+}
+return result;
+}
+
+console.log(sumPow(1, 4)); // 1 + 4 + 9 + 16 = 30
+console.log(sumPow(101, 150)); // 797925
+                </code></pre></p>
+            </section>
+
+            <section style="text-align: left;">
+                <h2 style="color:#e8643b;">Example</h2>
+                <ul>
+                    <li><b>Action: </b> Write a JavaScript program that will read in a number and write out its digits </li>
+                </ul>
+            </section>
+
+
+            <section style="text-align: left;">
+                <h2>Do/While loops</h2>
+                <ul>
+                    <li>Less common type of loop</li>
+                    <li>In this type of loop, the conditional test happens at the <em>end</em>, after the loop has run</li>
+                    <li> As a result, the JavaScript code within the curly braces always run at <em>least once</em>, even if the condition isn’t ever true </li>
+                </ul>
+                <p><pre><code class="hljs" data-trim contenteditable>
+do { 
+	// javascript to repeat 
+} while (condition) ; 
+
+					</code></pre></p>
+            </section>
+
+            <section style="text-align: left;">
+                <h2>For loops</h2>
+                <ul>
+                    <li><em>For loops</em> are usually used for repeating a series of steps a certain number of times, so they often involve some kind of counter variable, a conditional test, and a way of changing the counter variable.</li>
+                    <li>A <em>while loop</em>, with fewer lines of code</li>
+                </ul>
+                <p><pre><code class="hljs" data-trim contenteditable>
+for (initialisation; condition; increment/decrement ) { 
+	//perform JavaScript
+} 
+
+					</code></pre></p>
+            </section>
+
+
+            <section style="text-align: left;">
+                <p><pre><code class="hljs" data-trim contenteditable>
+let num = 1; 
+while (num <= 100) { 
+	document.write('Number ' + num + '<br>'); 
+	num += 1; 
+} 
+
+					</code></pre></p>
+                <p><pre><code class="hljs" data-trim contenteditable>
+for (let num=1; num<=100; num++) { 
+	document.write('Number ' + num + '<br>'); 
+} 
+
+					</code></pre></p>
+            </section>
+
+            <section>
+                <div class="sl-block" data-block-type="image" style="width: 100%; height: 100%;" data-block-id="">
+                    <div class="sl-block-content"><img src="assets/img/for_loop.png"></div>
+                </div>
+            </section>
+
+            <section style="text-align: left;">
+                <h2>For with arrays</h2>
+                <p><pre><code class="hljs" data-trim contenteditable>
+
+let days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+	for (let i=0; i < days.length; i++) {    
+	document.write(days[i] + ', '); 
+	}
+
+
+					</code></pre></p>
+                <p><pre><code class="hljs" data-trim contenteditable>
+let example = ['first','second','third','last']; 
+for (let j = example.length ; j > 0; j--) {    
+	document.write(example[j-1] + '<br>'); 
+} 
+					</code></pre></p>
+            </section>
+
+            <section style="text-align: left;">
+                <h2>For-of Loop</h2>
+                <ul>
+                    <li>New type of for loop for going through arrays (ES6)</li>
+                    <li>In this type of loop does not have a condition</li>
+                    <li>It is designed to loop every item in an array</li>
+                </ul>
+                <p><pre><code class="js" data-trim contenteditable>
+let arr = [2,3,6];						
+for(let num of arr){ 
+console.log(num);
+} 
+                </code></pre></p>
+            </section>
+            <section style="text-align: left;">
+                    <h2>Break and Continue</h2>
+                    <ul>
+                        <li>break and continue give more control in looping things</li>
+                        <li>break - When a loop executes <b>break</b>, it immediately exits the loop structure</li>
+                        <li>continue - When a loop executes <b>continue</b>, it skips the current cycle and continues</li>
+                    </ul>
+                </section>
+                <section style="text-align: left;">
+                        <h2>Break and Continue</h2>
+                        <p><pre><code class="js" data-trim contenteditable>
+    
+let days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+for (let i=0; i < days.length; i++) {    
+if(days[i] === "Thursday"){
+break;
+} 
+console.log(days[i]);
+}
+// Will print "Monday", "Tuesday", "Wednesday"			
+    
+                        </code></pre></p>
+                        <p><pre><code class="js" data-trim contenteditable>
+let days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+for (let i=0; i < days.length; i++) {    
+if(days[i] === "Thursday"){
+continue;
+} 
+console.log(days[i]);
+}
+// Will print "Monday", "Tuesday", "Wednesday", "Friday", "Saturday", "Sunday"
+                        </code></pre></p>
+                    </section>
+
+                    <section style="text-align: left;" data-transition="slide" data-background="#007ac9" data-background-transition="slide">
+                        <h1>Examples</h1>
+                        <p>App for organising groceries</p>
+                    </section>
+                    <section style="text-align: left;">
+                        <h2>Adding items to the groceries list</h2>
+                        <p><pre><code class="js" data-trim contenteditable>
+    let groceries = ["Bread", "Milk", "Butter"];
+    function addToGroceriesList(item){
+      if(typeof(item) === "string"){ // Checking if item is string
+        groceries.push(item);
+        console.log(`You have added ${item} to the list!`);
+      } else {
+        console.log(`The item ${item} was not added to the list. Sorry.`);
+      }
+    }
+    // Calling the adding function
+    addToGroceriesList("Salad");
+                        </code></pre></p>
+                    </section>
+                    <section style="text-align: left;">
+                        <h2>Reading all items from the groceries list</h2>
+                        <p><pre><code class="js" data-trim contenteditable>
+    groceries = ["Bread", "Milk", "Butter", "Salad"];
+    function showGroceriesList(){
+      let i = 0, listNum = 1; // listNum = counter for item numeration
+      console.log("My groceries list:");
+      while(i < groceries.length){
+        if(groceries[i] !== null){ // a check to not show deleted items
+          console.log(`${listNum}. ${groceries[i]}`);
+          listNum++; // We add one if the item is not deleted (null)
+        }
+        i++;
+      }
+    }
+    // Calling the showing function
+    showGroceriesList();
+                        </code></pre></p>
+                    </section>
+                    <section style="text-align: left;">
+                        <h2>Finding item in the groceries list</h2>
+                        <p><pre><code class="js" data-trim contenteditable>
+    groceries = ["Bread", "Milk", "Butter", "Salad"];
+    function checkForItemInGroceriesList(item){
+      for(let listItem of groceries) {
+        if(listItem === item){ // Check if the item is the inputted item
+          console.log(`The item ${item} was found!`);
+          return listItem; // return always goes out of the function
+        }
+      }
+      console.log(`There was no ${item} item in the list!`);
+      return null; // Will not execute if the previous return is executed
+    }
+    // Calling the check item function
+    let searchedItem = checkForItemInGroceriesList("Butter"); // "Butter"
+    let searchedItem2 = checkForItemInGroceriesList("Sugar"); // null
+                        </code></pre></p>
+                    </section>
+                    <section style="text-align: left;">
+                        <h2>Deleting an item from the groceries list</h2>
+                        <p><pre><code class="js" data-trim contenteditable>
+    groceries = ["Bread", "Milk", "Butter", "Salad"];
+    function deleteItemFromGroceries(item){
+      for(let i = 0; i < groceries.length; i++){
+        if(groceries[i] === item){
+          console.log("Item has been deleted!");
+          groceries[i] = null; // we set the deleted item to null
+          return true;
+        }
+      }
+      return false;
+    }
+    // Calling the delete function
+    deleteItemFromGroceries("Salad"); // true
+    deleteItemFromGroceries("oil"); // false
+                        </code></pre></p>
+                    </section>
+                
+        </div>
+
+    </div>
+
+    <script src="assets/lib/js/head.min.js"></script>
+    <script src="assets/js/reveal.js"></script>
+
+    <script>
+        // Full list of configuration options available at:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+            // Transition speed
+            transitionSpeed: 'default', // default/fast/slow
+
+            // Enable slide navigation via mouse wheel
+            mouseWheel: true,
+
+            // Optional reveal.js plugins
+            dependencies: [{
+                src: 'assets/lib/js/classList.js',
+                condition: function() {
+                    return !document.body.classList;
+                }
+            }, {
+                src: 'assets/plugin/markdown/marked.js',
+                condition: function() {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            }, {
+                src: 'assets/plugin/markdown/markdown.js',
+                condition: function() {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            }, {
+                src: 'assets/plugin/highlight/highlight.js',
+                async: true,
+                condition: function() {
+                    return !!document.querySelector('pre code');
+                },
+                callback: function() {
+                    hljs.initHighlightingOnLoad();
+                }
+            }, {
+                src: 'assets/plugin/zoom-js/zoom.js',
+                async: true
+            }, {
+                src: 'assets/plugin/notes/notes.js',
+                async: true
+            }]
+        });
+    </script>
+
+</body>
+
+</html>
